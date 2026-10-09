@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Effects Challenge</title>
+    
+    <!-- Requirement 1: Importing Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Requirement 1: Applying the custom fonts using CSS font-family */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 40px;
+            margin: 0;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            font-size: 2.5em;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* Container for the image hover effect */
+        .image-container {
+            width: 500px;
+            max-width: 100%;
+            margin: 40px auto;
+            overflow: hidden; /* This keeps the image inside the box when it scales */
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        /* Style the image inside the container */
+        .image-container img {
+            width: 100%;
+            display: block;
+            /* Add a smooth transition so the effect is not instant */
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: grayscale(100%); /* Starts in black and white */
+        }
+
+        /* Requirement 2: The .hover pseudo-class with CSS transformations */
+        .image-container:hover img {
+            transform: scale(1.1) rotate(3deg); /* Zooms in and tilts slightly */
+            filter: grayscale(0%) sepia(20%); /* Brings back color and adds a warm tint */
+        }
+        
+        /* Optional: Change text color on hover for extra effect */
+        .image-container:hover + p {
+            color: #d4af37;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Effects Challenge</h1>
+    <p>Hover over the image below to see the transformations.</p>
+
+    <div class="image-container">
+        <!-- Make sure your picture is named exactly 'car.jpg' and is in this folder -->
+        <img src="car.jpg" alt="My Car">
+    </div>
+    
+    <p>Notice how the image scales, rotates, and changes color!</p>
+
+</body>
+</html>
